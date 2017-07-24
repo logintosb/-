@@ -1,0 +1,360 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>发电信息管理</RootNamespace>
+    <AssemblyName>发电信息管理</AssemblyName>
+    <VSTO_HostDocumentName>发电信息管理.xlsx</VSTO_HostDocumentName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <OfficeApplication>Excel</OfficeApplication>
+    <ProjectGuid>{F4CB7A6F-47DC-4476-8ACB-FBBA7A9FB6B1}</ProjectGuid>
+    <SolutionID>de993a34-b584-426d-908d-2b58fdb90bad</SolutionID>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>E:\发电信息管理\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>zh-chs</TargetCulture>
+    <ApplicationVersion>1.0.0.16</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>发电信息管理</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>发电信息管理</FriendlyName>
+    <OfficeApplicationDescription />
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <VSTO_EmbedTypeLibraryInAssembly>false</VSTO_EmbedTypeLibraryInAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="inputSheet.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="inputSheet.Designer.cs">
+      <DependentUpon>inputSheet.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="baseDataSheet.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="baseDataSheet.Designer.cs">
+      <DependentUpon>baseDataSheet.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="recordSheet.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="recordSheet.Designer.cs">
+      <DependentUpon>recordSheet.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="dailyTemplet.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="dailyTemplet.Designer.cs">
+      <DependentUpon>dailyTemplet.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="outputReport.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="outputReport.Designer.cs">
+      <DependentUpon>outputReport.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="mobilWeekTemplet.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="mobilWeekTemplet.Designer.cs">
+      <DependentUpon>mobilWeekTemplet.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet11.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet11.Designer.cs">
+      <DependentUpon>Sheet11.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet13.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet13.Designer.cs">
+      <DependentUpon>Sheet13.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet14.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet14.Designer.cs">
+      <DependentUpon>Sheet14.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="towerTotal.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="towerTotal.Designer.cs">
+      <DependentUpon>towerTotal.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet8.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet8.Designer.cs">
+      <DependentUpon>Sheet8.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="unicomWeekReportTemplet.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="unicomWeekReportTemplet.Designer.cs">
+      <DependentUpon>unicomWeekReportTemplet.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="sumTemplet.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="sumTemplet.Designer.cs">
+      <DependentUpon>sumTemplet.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="telecomWeekReportTemplet.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="telecomWeekReportTemplet.Designer.cs">
+      <DependentUpon>telecomWeekReportTemplet.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="ThisWorkbook.cs">
+      <DependentUpon>发电信息管理.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="ThisWorkbook.Designer.cs">
+      <DependentUpon>ThisWorkbook.Designer.xml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="outputReport.resx">
+      <DependentUpon>outputReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="inputSheet.resx">
+      <DependentUpon>inputSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="recordSheet.resx">
+      <DependentUpon>recordSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="发电信息管理.xlsx" />
+    <None Include="发电信息管理_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ThisWorkbook.Designer.xml">
+      <DependentUpon>ThisWorkbook.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="inputSheet.Designer.xml">
+      <DependentUpon>inputSheet.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="baseDataSheet.Designer.xml">
+      <DependentUpon>baseDataSheet.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="recordSheet.Designer.xml">
+      <DependentUpon>recordSheet.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dailyTemplet.Designer.xml">
+      <DependentUpon>dailyTemplet.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="outputReport.Designer.xml">
+      <DependentUpon>outputReport.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="telecomWeekReportTemplet.Designer.xml">
+      <DependentUpon>telecomWeekReportTemplet.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sumTemplet.Designer.xml">
+      <DependentUpon>sumTemplet.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="unicomWeekReportTemplet.Designer.xml">
+      <DependentUpon>unicomWeekReportTemplet.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mobilWeekTemplet.Designer.xml">
+      <DependentUpon>mobilWeekTemplet.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet8.Designer.xml">
+      <DependentUpon>Sheet8.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet11.Designer.xml">
+      <DependentUpon>Sheet11.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="towerTotal.Designer.xml">
+      <DependentUpon>towerTotal.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet13.Designer.xml">
+      <DependentUpon>Sheet13.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet14.Designer.xml">
+      <DependentUpon>Sheet14.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>发电信息管理_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F2A0576A80E67D1EDBFD4C394E497D1D2F3C31EA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="发电信息管理.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\Excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]发电信息管理.xlsx&quot;" />
+        <Host Name="Excel Document" Path=".\发电信息管理.xlsx" GeneratedCodeNamespace="发电信息管理" PublishedHash="CAD05B5741FB6D5C420CF558C4175819BBE526D8">
+          <HostItem Name="Sheet2" Code="baseDataSheet.cs" CanonicalName="Sheet2" PublishedHash="0129A3855B49AD8D4C845B71DAD6F98A7FA5FB56" DisplayName="基础信息" Blueprint="baseDataSheet.Designer.xml" GeneratedCode="baseDataSheet.Designer.cs" />
+          <HostItem Name="Sheet4" Code="dailyTemplet.cs" CanonicalName="Sheet4" PublishedHash="508DB2DD6D5CB7598E9E10C360742CC87B01B699" DisplayName="日报表模板" Blueprint="dailyTemplet.Designer.xml" GeneratedCode="dailyTemplet.Designer.cs" />
+          <HostItem Name="Sheet1" Code="inputSheet.cs" CanonicalName="Sheet1" PublishedHash="C4B170251E27AAC1E8CEE7557FD1C792E4754582" DisplayName="输入数据" Blueprint="inputSheet.Designer.xml" GeneratedCode="inputSheet.Designer.cs" />
+          <HostItem Name="Sheet10" Code="mobilWeekTemplet.cs" CanonicalName="Sheet10" PublishedHash="179B26DAA5784783EA6F9A47BFA049A7AB811107" DisplayName="移动周报表模板" Blueprint="mobilWeekTemplet.Designer.xml" GeneratedCode="mobilWeekTemplet.Designer.cs" />
+          <HostItem Name="Sheet5" Code="outputReport.cs" CanonicalName="Sheet5" PublishedHash="28E61A0750640F50BB371A60A8DCDDDA46343368" DisplayName="生成报表" Blueprint="outputReport.Designer.xml" GeneratedCode="outputReport.Designer.cs" />
+          <HostItem Name="Sheet3" Code="recordSheet.cs" CanonicalName="Sheet3" PublishedHash="3C9D5C24023B0F671D0D717D82B5F0ACB71A0D54" DisplayName="发电记录" Blueprint="recordSheet.Designer.xml" GeneratedCode="recordSheet.Designer.cs" />
+          <HostItem Name="Sheet11" Code="Sheet11.cs" CanonicalName="Sheet11" PublishedHash="D7DD1993A988CE24B5C16AC0701041EEFBE53EFB" DisplayName="移动发电明细表" Blueprint="Sheet11.Designer.xml" GeneratedCode="Sheet11.Designer.cs" />
+          <HostItem Name="Sheet13" Code="Sheet13.cs" CanonicalName="Sheet13" PublishedHash="90E36B2B9FC65773EC92551690E8AAC46668D6A3" DisplayName="发电导入总表模板" Blueprint="Sheet13.Designer.xml" GeneratedCode="Sheet13.Designer.cs" />
+          <HostItem Name="Sheet14" Code="Sheet14.cs" CanonicalName="Sheet14" PublishedHash="43F61C27AFDD1263A65C8FC502C4920D80F864BE" DisplayName="长实发电核对表" Blueprint="Sheet14.Designer.xml" GeneratedCode="Sheet14.Designer.cs" />
+          <HostItem Name="Sheet8" Code="Sheet8.cs" CanonicalName="Sheet8" PublishedHash="89B37953FD099B502DCE28B25A99F961B95C4522" DisplayName="自定义模板" Blueprint="Sheet8.Designer.xml" GeneratedCode="Sheet8.Designer.cs" />
+          <HostItem Name="Sheet7" Code="sumTemplet.cs" CanonicalName="Sheet7" PublishedHash="EEF5257F5E25BEBF0366CA8B630DE09505653BC3" DisplayName="汇总表模板" Blueprint="sumTemplet.Designer.xml" GeneratedCode="sumTemplet.Designer.cs" />
+          <HostItem Name="Sheet6" Code="telecomWeekReportTemplet.cs" CanonicalName="Sheet6" PublishedHash="206B3F7BBFADE05889E67C38D37E276DF6141D01" DisplayName="电信周报模板" Blueprint="telecomWeekReportTemplet.Designer.xml" GeneratedCode="telecomWeekReportTemplet.Designer.cs" />
+          <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" PublishedHash="477BBADAA1386857CDC2CCBB85BB2D47FEAD01B3" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
+          <HostItem Name="Sheet12" Code="towerTotal.cs" CanonicalName="Sheet12" PublishedHash="4F0EC161C3C612FEF356864187E4A927F13DF168" DisplayName="铁塔汇总表" Blueprint="towerTotal.Designer.xml" GeneratedCode="towerTotal.Designer.cs" />
+          <HostItem Name="Sheet9" Code="unicomWeekReportTemplet.cs" CanonicalName="Sheet9" PublishedHash="8C008A6AE3DC169954207B1F0625CED69430EB6A" DisplayName="联通周报模板" Blueprint="unicomWeekReportTemplet.Designer.xml" GeneratedCode="unicomWeekReportTemplet.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!--
+    To modify your build process, add your task inside one of the targets below and uncomment it.
+    Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
